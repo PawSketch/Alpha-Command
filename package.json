@@ -1,0 +1,13 @@
+{
+  "name": "alpha-command",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "ingest": "node src/ingest-market-data.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
+    "ccxt": "^4.5.5"
+  }
+}
