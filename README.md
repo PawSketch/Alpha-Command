@@ -1,20 +1,14 @@
-# Alpha Command
+# Alpha Command prototype — inactive
 
-Backend intelligence and research architecture for Velox Insights Portfolio Alpha Command.
+**Do not deploy, migrate or schedule this repository.** The active Lovable-synced Velox Insights application is [PawSketch/conviction-dashboard](https://github.com/PawSketch/conviction-dashboard). Its existing Supabase asset registry and tables are the source of truth. Michelle has chosen not to use this separate implementation.
 
-## Current build
-- Supabase/Postgres schema for persistent market intelligence
-- asset identity registry
-- market observations and feature snapshots
-- 9-state cycle history
-- Pre-Move Radar signals
-- multi-horizon signal outcome scoring
-- historical precursor event library
-- research/evidence and tokenomics snapshots
-- portfolio/trade/alert records
-- per-asset/regime model performance
+This repository is retained as an historical prototype so its research and code can be reviewed, but its schema is incompatible with the existing Velox database. Do not apply either migration to the Velox Supabase project, set a service-role key here, or run its CCXT ingestion script. [Issue #1](https://github.com/PawSketch/Alpha-Command/issues/1) records the conflicts. Future early-warning work belongs in the active Velox repository after reconciliation.
 
-See `docs/PORTFOLIO_ALPHA_COMMAND_ARCHITECTURE.md` and `supabase/migrations/20260930_portfolio_alpha_command.sql`.
+## Prototype contents
 
-## Safety/data rule
-Asset rows begin as NEEDS_PRIMARY_VERIFICATION. Do not ingest ambiguous ticker data until exact project/network/contract identity is verified. PRE and VELO are intentionally outside this command universe.
+- Separate Supabase/Postgres schema and asset identity registry
+- CCXT discovery/ingestion sketch
+- SQL feature and candidate radar views
+- State, evidence, signal outcome and portfolio table designs
+
+These files are **not** a live feed, a validated pre-move model or a production integration. VELO always means Velo Protocol in the active Velox app; this prototype intentionally excluded it.
